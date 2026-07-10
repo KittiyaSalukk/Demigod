@@ -1,0 +1,6 @@
+{
+  "name": "Sacred Chronicles 3D",
+  "description": "Full-screen interactive Three.js 3D game featuring 8-way billboard character spritesheets, camera follow-lerp, active combat, enemies with knockback physics, collectable healing potions, synthesised audio, and custom control options.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

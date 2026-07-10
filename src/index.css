@@ -1,0 +1,134 @@
+@import "tailwindcss";
+
+/* Sophisticated Dark Theme Keyframes and Visual Effects */
+
+@layer utilities {
+  .text-shadow-gold {
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+  }
+  .text-shadow-glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  }
+  .box-shadow-gold {
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2), inset 0 0 15px rgba(212, 175, 55, 0.05);
+  }
+  .box-shadow-gold-active {
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.5), inset 0 0 10px rgba(212, 175, 55, 0.2);
+  }
+}
+
+/* Retro CRT scanlines */
+.scanlines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 4px, 6px 100%;
+  z-index: 99;
+  pointer-events: none;
+}
+
+/* CRT Screen Flicker */
+@keyframes crt-flicker {
+  0% { opacity: 0.985; }
+  50% { opacity: 0.995; }
+  100% { opacity: 0.985; }
+}
+
+.crt-flicker-effect {
+  animation: crt-flicker 0.15s infinite;
+}
+
+/* Glowing ambient vignette */
+.vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.85);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Amber floating embers background particles */
+@keyframes float-up {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(1) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-10vh) translateX(50px) scale(0.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.ember {
+  position: absolute;
+  bottom: -20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.8) 0%, rgba(212, 175, 55, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Metallic gold shining text styling */
+.shimmer-gold {
+  background: linear-gradient(
+    120deg,
+    #b38728 0%,
+    #fbf5b7 25%,
+    #da1b60 50%,
+    #fbf5b7 75%,
+    #aa771c 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Scanline scrolling effect */
+@keyframes scroll-scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scan-scroller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0) 0%,
+    rgba(212, 175, 55, 0.05) 50%,
+    rgba(212, 175, 55, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 98;
+  animation: scroll-scan 8s linear infinite;
+}
+
